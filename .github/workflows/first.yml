@@ -26,6 +26,7 @@ jobs:
   terraform_plan:
     name: 'terraform plan'
     runs-on: ubuntu-latest
+    environment: dev
     
     steps:
     - name: Checkout
@@ -49,7 +50,7 @@ jobs:
     name: 'terraform apply'
     needs: [terraform_plan]
     runs-on: ubuntu-latest
-    environment: production
+    environment: dev
     
     defaults:
       run:
